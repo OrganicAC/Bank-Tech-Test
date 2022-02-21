@@ -8,4 +8,12 @@ class Account
     @balance = DEFAULT_BALANCE
   end 
 
+  def deposit(credit)
+     @balance += credit
+  end 
+
+  def withdraw(debit)
+    @balance -= debit
+  end
+  
 end
