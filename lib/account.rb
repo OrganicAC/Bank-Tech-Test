@@ -9,7 +9,7 @@ class Account
   end 
 
   def deposit(credit)
-     @balance += credit
+    @balance += credit
   end 
 
   def withdraw(debit)
