@@ -1,10 +1,6 @@
 # Bank-Tech-Test
 
-Requirements: 
-1. Balance
-2. Deposits (credits)
-3. Withdrawals (debits)
-4. Dates
+This is a tech test for Maker's Academy
 
 User stories:
 ```
