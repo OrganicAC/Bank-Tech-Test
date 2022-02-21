@@ -15,5 +15,4 @@ class Account
   def withdraw(debit)
     @balance -= debit
   end
-  
 end
