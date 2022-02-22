@@ -18,6 +18,11 @@ account.withdraw(amount) # withdraws the amount given in brackets
 account.print_statement # will print a statement showing you your transactions in reverse chronological order
 ``` 
 
+
+# <img src='./public/images/REPLScreenshot.png' style='height: 500px'>
+
+Error is generated when trying to withdraw more than your total balance
+
 User stories:
 ```
 As a money conscious person
