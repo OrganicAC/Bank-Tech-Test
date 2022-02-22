@@ -24,7 +24,6 @@ describe Transaction do
   end
 end
 
-
 def test_time_format
   Time.now.strftime('%d/%m/%Y')
-end 
+end

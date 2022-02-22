@@ -17,7 +17,7 @@ class Account
   end 
 
   def withdraw(debit)
-    raise 'Insufficient funds available' if @balance == 0
+    raise 'Insufficient funds available' if debit > @balance
     @balance -= debit
   end
 
