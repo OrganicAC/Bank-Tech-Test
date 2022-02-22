@@ -12,6 +12,6 @@ class Transaction
   end 
     
   def format
-    "#{@date} || #{credit} || #{debit} || #{balance}"
+    "#{@date} || #{@credit} || #{@debit} || #{@balance}"
   end
 end

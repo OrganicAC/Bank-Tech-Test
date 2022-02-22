@@ -1,28 +1,38 @@
 require_relative 'transaction'
+require_relative 'statement'
 
 class Account
 
   DEFAULT_BALANCE = 0
 
-  attr_reader :balance
+  attr_reader :balance, :statement_class, :statement
 
-  def initialize(transaction_class: Transaction)
+  def initialize
     @balance = DEFAULT_BALANCE
-    @transaction_class = transaction_class
+    @statement_class = Statement.new
     @statement = []
   end 
 
   def deposit(credit)
     @balance += credit
+    create_transaction(credit, nil, @balance)
   end 
 
   def withdraw(debit)
-    raise 'Insufficient funds available' if debit > @balance
+    raise 'Insufficient funds available' if (@balance - debit) <= 0
     @balance -= debit
+    create_transaction(nil, debit, @balance)
   end
 
-  def create_transaction
-    transaction = @transaction_class.new(date, credit, debit, balance)
+  def print_statement
+    @statement_class.print_statement(@statement)
+    return
+  end
+
+  private 
+
+  def create_transaction(credit, debit, balance)
+    transaction = Transaction.new(credit: credit, debit: debit, balance: balance)
     @statement << transaction
   end
 end
