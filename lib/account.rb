@@ -26,7 +26,6 @@ class Account
 
   def print_statement
     @statement_class.print_statement(@statement)
-    return
   end
 
   private 
