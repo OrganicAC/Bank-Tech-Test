@@ -1,19 +1,30 @@
 require 'transaction'
-require 'timecop'
 
 describe Transaction do
-
-  before do
-    Timecop.freeze(Time.now)
-  end
-    
-  after do
-    Timecop.return
-  end
-  
-  describe 'format' do
-    it 'has the correct format' do
-    expect(subject.format).to eq '21/02/2022 || 100 || || 100'
+  describe '.format' do
+    it 'has the correct date' do
+      expect(subject.format).to eq "#{test_time_format} ||  ||  || "
     end 
+    it 'has the correct credit' do
+      subject = described_class.new(credit: 1000)
+      expect(subject.format).to eq "#{test_time_format} || 1000 ||  || "
+    end
+    it 'has the correct debit' do
+      subject = described_class.new(debit: 1000)
+      expect(subject.format).to eq "#{test_time_format} ||  || 1000 || "
+    end
+    it 'has the correct balance' do
+      subject = described_class.new(balance: 1000)
+      expect(subject.format).to eq "#{test_time_format} ||  ||  || 1000"
+    end
+    it 'has the correct complete format' do
+      subject = described_class.new(credit: 1000, balance: 1000)
+      expect(subject.format).to eq "#{test_time_format} || 1000 ||  || 1000"
+    end
   end
+end
+
+
+def test_time_format
+  Time.now.strftime('%d/%m/%Y')
 end 
