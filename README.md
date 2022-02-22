@@ -53,3 +53,7 @@ I want to see my printed bank statement
 ### Approach
 
 I started with a Diagram to outline how I generally wanted the test to be, including the three classes and how they would interact at a basic level. I then moved through my user stories, attempting to TDD as much as possible, and linted with Rubocop as I went. Once I was happy, I looked through my Simplecov coverage to bring my test coverage up, then ran Rubocop one final time.
+
+### Diagram
+
+# <img src='./public/images/BankTechTest.png' style='height: 500px'>
