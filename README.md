@@ -23,6 +23,13 @@ account.print_statement # will print a statement showing you your transactions i
 
 Error is generated when trying to withdraw more than your total balance
 
+### Running tests
+cd into the directory from your terminal
+On your terminal run:
+```
+> rspec
+```
+
 User stories:
 ```
 As a money conscious person
